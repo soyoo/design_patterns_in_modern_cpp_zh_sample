@@ -1,36 +1,36 @@
-# Summary
+# Table of contents
 
-* [Introduction](README.md)
-* [About the Author](about-the-author.md)
-* [About the Technical Reviewer](about-the-technical-reviewer.md)
-* [Chapter 1 Introduction](chapter-1-introduction.md)
-* Part I Creational Patterns
-* Chapter 2 Builder
-* Chapter 3 Factories
-* Chapter 4 Prototype
-* Chapter 5 Singleton
-* Part II Structural Patterns
-* Chapter 6 Adapter
-* Chapter 7 Bridge
-* Chapter 8 Composite
-* Chapter 9 Decorator
-* Chapter 10 Facade
-* Chapter 11 Flyweight
-* Chapter 12 Proxy
-* Part III Behavioral Patterns
-* Chapter 13 Chain of Responsibility
-* Chapter 14 Command
-* Chapter 15 Interpreter
-* Chapter 16 Iterator
-* Chapter 17 Mediator
-* Chapter 18 Mememto
-* Chapter 19 Null Object
-* Chapter 20 Observer
-* Chapter 21 State
-* Chapter 22 Strategy
-* Chapter 23 Template Method
-* Chapter 24 Visitor
-* Part IV Functional Design Patterns
-* Chapter 25 Maybe Monad
-* Index
+* [译者序](README.md)
+* [关于作者](about-the-author.md)
+* [关于评审者](about-the-technical-reviewer.md)
+* [第 1 章 简介](chapter-1-introduction.md)
+* [第 1 部分 创建型模式](part-i-creational-patterns.md)
+* [第 2 章 建造者模式](chapter-2-builder.md)
+* [第 3 章 工厂模式](chapter-3-factories.md)
+* [第 4 章 原型模式](chapter-4-prototype.md)
+* [第 5 章 单例模式](chapter-5-singleton.md)
+* [第 2 部分 结构型模式](part-ii-structural-patterns.md)
+* [第 6 章 适配器模式](chapter-6-adapter.md)
+* [第 7 章 桥接模式](chapter-7-bridge.md)
+* [第 8 章 组合模式](chapter-8-composite.md)
+* [第 9 章 装饰器模式](chapter-9-decorator.md)
+* [第 10 章 外观模式](chapter-10-facade.md)
+* [第 11 章 享元模式](chapter-11-flyweight.md)
+* [第 12 章 代理模式](chapter-12-proxy.md)
+* [第 3 部分 行为型模式](part-iii-behavioral-patterns.md)
+* [第 13 章 责任链模式](chapter-13-chain-of-responsibility.md)
+* [第 14 章 命令模式](chapter-14-command.md)
+* [第 15 章 解释器模式](chapter-15-interpreter.md)
+* [第 16 章 迭代器模式](chapter-16-iterator.md)
+* [第 17 章 中介者模式](chapter-17-mediator.md)
+* [第 18 章 备忘录模式](chapter-18-mememto.md)
+* [第 19 章 空对象模式](chapter-19-null-object.md)
+* [第 20 章 观察者模式](chapter-20-observer.md)
+* [第 21 章 状态模式](chapter-21-state.md)
+* [第 22 章 策略模式](chapter-22-strategy.md)
+* [第 23 章 模板方法模式](chapter-23-template-method.md)
+* [第 24 章 访问者模式](chapter-24-visitor.md)
+* [第 4 部分 函数式模式](part-iv-functional-design-patterns.md)
+* [第 25 章 Maybe Monad](chapter-25-maybe-monad.md)
+* [索引](index.md)
 

@@ -1,6 +1,6 @@
-### 关于技术审稿人
+# 关于评审者
 
-![MassimoNardone](image/MassimoNardone.png) 
+![MassimoNardone](.gitbook/assets/MassimoNardone.png)
 
 **Massimo Nardone** 拥有超过 24 年的安全，Web/移动开发，云和 IT 体系结构的经验。他在 IT 方面酷爱安全与Android。
 
@@ -16,5 +16,5 @@
 
 他目前担任 Cargotec Oyj 首席信息安全官，并且是 ISACA 芬兰分会董事会成员。
 
-Massimo 已经为不同的出版商审阅了超过 45 本 IT 书籍，并且与人合著了*Java EE 8*（Apress, 2018）中的 *Pro JPA 2* 以及 *Pro Android Games* （Apress, 2015）。
+Massimo 已经为不同的出版商审阅了超过 45 本 IT 书籍，并且与人合著了_Java EE 8_（Apress, 2018）中的 _Pro JPA 2_ 以及 _Pro Android Games_ （Apress, 2015）。
 
