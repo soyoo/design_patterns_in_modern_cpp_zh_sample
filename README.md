@@ -10,5 +10,5 @@
 
 献给最爱的 C++ ~
 
-gitbook: 
+gitbook: [https://soyoo.gitbook.io/design-patterns-in-modern-cpp-zh-sample/](https://soyoo.gitbook.io/design-patterns-in-modern-cpp-zh-sample/)
 
