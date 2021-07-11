@@ -4,9 +4,9 @@
 
 我想这本书存在的主要原因，那就是 C++ 又再次焕发生机。在经历了很长一段时间的停滞之后，它正在进化、成长，尽管它又不得不向后与 C 语言兼容做斗争，但是，好的事情正在发生，尽管不是我们所预期的速度（例如 modules，还有其它东西）。
 
-现在，关于设计模式，我们不应该忘记最初出版的设计模式书籍1，其中的示例是使用 C++ 与 Smalltalk写就的。从那时起，许多编程语言都将设计模式直接融入到语言当中：例如，C\# 直接将观察者模式与其对事件的内置支持结合在一起（对应于 event 关键字）。C++ 没有这样实现，至少在语法级别上没有这样做。尽管如此，像诸如 std::function 这样的特性的引入确实使许多编程场景变得更加简单。
+现在，关于设计模式，我们不应该忘记最初出版的设计模式书籍\[^1\]，其中的示例是使用 C++ 与 Smalltalk写就的。从那时起，许多编程语言都将设计模式直接融入到语言当中：例如，C\# 直接将观察者模式与其对事件的内置支持结合在一起（对应于 event 关键字）。C++ 没有这样实现，至少在语法级别上没有这样做。尽管如此，像诸如 std::function 这样的特性的引入确实使许多编程场景变得更加简单。
 
-注1：Erich Gamma et al., _Design Patterns: Elements of Reusable Object-Oriented Software_ \(Boston, MA: Addison Wesley, 1994\).
+\[^1\]：Erich Gamma et al., _Design Patterns: Elements of Reusable Object-Oriented Software_ \(Boston, MA: Addison Wesley, 1994\).
 
 同时，设计模式也是一项有趣的研究，比如，如何通过不同复杂程度的技术，不同类型的权衡，来解决一个问题。有些设计模式或多或少是必要的、不可避免的，而其它设计模式更多的是科学上的求知欲（尽管如此，这本书还是会讨论的，因为我是一个完美主义者）。
 
@@ -33,9 +33,9 @@
 * 我有时会省略一些代码元素，它们对于完成一个类型的功能是必要的（例如，移动构造函数），因为这些元素占用了太多的空间。
 * 在很多情况下，我会忽略 const 关键字；在正常情况下，这实际上是有意义的。const 正确性通常会导致 api 表面上的分裂、加倍，这在书的格式中不能很好地工作。
 
-你应该意识到，大多数示例都使用了现代 C++（C++11、14、17和更高版本），并且，开发人员通常可以使用最新的 C++ 语言特性。例如，当 C++14 允许我们自动推断返回值类型时，你将不会发现许多函数签名以 -&gt; decltype\(...\) 为结尾。这些示例中没有一个是针对特定编译器的，但是如果你选择的编译器2不能正常工作，你需要找到解决办法。
+你应该意识到，大多数示例都使用了现代 C++（C++11、14、17和更高版本），并且，开发人员通常可以使用最新的 C++ 语言特性。例如，当 C++14 允许我们自动推断返回值类型时，你将不会发现许多函数签名以 -&gt; decltype\(...\) 为结尾。这些示例中没有一个是针对特定编译器的，但是如果你选择的编译器\[^2\]不能正常工作，你需要找到解决办法。
 
-注2：Intel, I'm looking at you!
+\[^2\]：Intel, I'm looking at you!
 
 在某些情况下，我将引用其它编程语言，比如 C\# 或者 Kotlin。有时值得注意的是，其它语言设计者是如何实现特定功能的？对于 C++ 来说，从其它语言借鉴一般可用的想法并不陌生：例如，在许多其它语言中，引入了 auto 关键字用于变量声明和返回类型的自动推断。
 
@@ -68,7 +68,7 @@ struct Foo : SomeBase<Foo>
 
 现在，您可能想知道为什么有人会这么做？原因之一是，以便于能够访问基类实现中的类型化 this 指针。
 
-例如，假设 SomeBase 的每个继承者都实现了迭代所需的 begin\(\)/end\(\) 对。那么，您将如何在 SomeBase 的成员中迭代该对象？直觉表明，您不能这样做，因为 SomeBase 本身没有提供 begin\(\)/end\(\) 接口。但是，如果您使用 CRTP，实际上是可以将 this 转换为派生类类型：
+例如，假设 SomeBase 的每个继承者都实现了迭代所需的 begin\( \)/end\( \) 对。那么，您将如何在 SomeBase 的成员中迭代该对象？直觉表明，您不能这样做，因为 SomeBase 本身没有提供 begin\( \)/end\( \) 接口。但是，如果您使用 CRTP，实际上是可以将 this 转换为派生类类型：
 
 ```cpp
 template <typename Derived>
@@ -97,7 +97,7 @@ template <typename T> struct Mixin : T
 }
 ```
 
-这种方法被称为混合继承（_mixin inheritance_），并允许类型的分层组合。例如，您可以允许 Foo\&gt; x; 声明一个实现所有三个类的特征的类型的变量，而不必实际构造一个全新的 FooBarBaz 类型。
+这种方法被称为混合继承（_mixin inheritance_），并允许类型的分层组合。例如，您可以允许 Foo&lt;Bar&lt;Baz&gt;&gt; x; 声明一个实现所有三个类的特征的类型的变量，而不必实际构造一个全新的 FooBarBaz 类型。
 
 有关此方法的具体示例，请参阅第 9 章。
 
@@ -211,7 +211,7 @@ struct PersistenceManager
 };
 ```
 
-这正是单一责任（_Single Responsibility_）的含义：每个类只有一个责任，因此，只有一个改变的理由。只有在需要对条目的存储做更多工作的情况下，Journal 才需要更改。例如，你可能希望每个条目都以时间戳为前缀，因此，你将更改 add\(\) 函数来实现这一点。从另一方面来说，如果你要更改持久化机制，这将在 PersistenceManager 中进行更改。
+这正是单一责任（_Single Responsibility_）的含义：每个类只有一个责任，因此，只有一个改变的理由。只有在需要对条目的存储做更多工作的情况下，Journal 才需要更改。例如，你可能希望每个条目都以时间戳为前缀，因此，你将更改 add\( \) 函数来实现这一点。从另一方面来说，如果你要更改持久化机制，这将在 PersistenceManager 中进行更改。
 
 一个违反 SRP 的反模式的极端例子被称为上帝对象（God Object）。上帝对象是一个巨大的类，它试图处理尽可能多的问题，称为一个难以处理的巨大怪物。
 
@@ -298,7 +298,7 @@ template <typename T> struct Specification
 
 在前面的示例中，类型 T 是我们选择的任何类型：它当然可以是一个 Product，但也可以是其它东西。这使得整个方法可重复使用。
 
-接下来，我们需要一种基于 Specification\ 的过滤方法：你猜到的，这是通过定义完成，一个 Filter\：
+接下来，我们需要一种基于 Specification&lt;T&gt; 的过滤方法：你猜到的，这是通过定义完成，一个 Filter&lt;T&gt;：
 
 ```cpp
 template <typename T> struct Filter
@@ -309,7 +309,7 @@ template <typename T> struct Filter
 };
 ```
 
-同样的，我们所做的就是为一个名为 filter 的函数指定签名，该函数接受所有项目和一个规范，并返回符合规范的所有项目。假设这些项目被存储为 vector，但实际上，你可以向 filter\(\) 传递，或者是一对迭代器，或者是一些专门为遍历集合而设计的定制接口。遗憾的是，C++ 语言未能标准化枚举或集合的概念，这是存在于其它编程语言（例如，.NET 的 IEnumerable）中的东西。
+同样的，我们所做的就是为一个名为 filter 的函数指定签名，该函数接受所有项目和一个规范，并返回符合规范的所有项目。假设这些项目被存储为 vector&lt;T\*&gt;，但实际上，你可以向 filter\(\) 传递，或者是一对迭代器，或者是一些专门为遍历集合而设计的定制接口。遗憾的是，C++ 语言未能标准化枚举或集合的概念，这是存在于其它编程语言（例如，.NET 的 IEnumerable）中的东西。
 
 基于前述，改进的过滤器的实现非常的简单：
 
@@ -329,7 +329,7 @@ struct BetterFilter : Filter<Product>
 };
 ```
 
-再次，你可以想到 Specification\，该规范被传入作为 std::function 的强类型化等效项，该函数仅约束到一定数量的可能的筛选规格。
+再次，你可以想到 Specification&lt;T&gt;，该规范被传入作为 std::function 的强类型化等效项，该函数仅约束到一定数量的可能的筛选规格。
 
 现在，这是最简单的部分。为了制作一个颜色过滤器，你可以制作一个 ColorSpecification：
 
@@ -398,7 +398,7 @@ for (auto& x : big_green_things)
 // Tree is large and green
 ```
 
-这里有很多代码！但是请记住，由于 C++ 的强大功能，你可以简单地引入一个 operator && 用于两个 Specification\ 对象，从而使得过滤过程由两个（或更多！）标准，极为简单：
+这里有很多代码！但是请记住，由于 C++ 的强大功能，你可以简单地引入一个 operator && 用于两个 Specification&lt;T&gt; 对象，从而使得过滤过程由两个（或更多！）标准，极为简单：
 
 ```cpp
 template <typename T> struct Specification
@@ -420,7 +420,7 @@ auto green_and_big =
     && SizeSpecification(Size::Large);
 ```
 
-因此，让我们回顾以下 OCP 原则是声明，以及前面的示例是如何执行它的。基本上，OCP 声明你不需要返回你已经编写和测试过的代码，并对其进行更改。这正是这里发生的！我们制定了 Specification\ 和 Filter\，从那时起，我们所要做的就是实现任何一个接口（不需要修改接口本身）来实现新的过滤机制。这就是“开放供扩展，封闭供修改”的意思。
+因此，让我们回顾以下 OCP 原则是声明，以及前面的示例是如何执行它的。基本上，OCP 声明你不需要返回你已经编写和测试过的代码，并对其进行更改。这正是这里发生的！我们制定了 Specification&lt;T&gt; 和 Filter&lt;T&gt;，从那时起，我们所要做的就是实现任何一个接口（不需要修改接口本身）来实现新的过滤机制。这就是“开放供扩展，封闭供修改”的意思。
 
 ### 里氏替换原则
 
@@ -597,11 +597,11 @@ struct Machine : IMachine
 
 ### 依赖反转原则
 
-DIP 的原始定义如下所示3：
+DIP 的原始定义如下所示\[^3\]：
 
 _A. High-level modules should not depend on low-level modules. Both should depend on abstractions_.
 
-注3：Martin, Robert C., _Agile Software Development, Principles, Patterns, and Practices_ \(New York: Prentice Hall, 2003\), pp. 127-131.
+\[^3\]：Martin, Robert C., _Agile Software Development, Principles, Patterns, and Practices_ \(New York: Prentice Hall, 2003\), pp. 127-131.
 
 这句话的主要意思是，如果你对日志记录感兴趣，你的报告组件不应该依赖于具体的 ConsoleLogger，而是可以依赖于 ILogger 接口。在这种情况下，我们认为报告组件是高级别的（更接近业务领域），而日志记录则是一个基本的关注点（类似于文件 I/O 或线程，但不是），被认为是一个低级别的模块。
 
@@ -627,9 +627,9 @@ public:
 
 现在的问题是，要初始化前面的类，你需要显式地调用 Reporting{ConsoleLogger{}} 或类似地东西。如果 Reporting 依赖于五个不同的接口呢？如果 ConsoleLogger 有自己的依赖项，又怎么办？你可以通过编写大量的代码来管理这个问题，但是这里有一个更好的方法。
 
-针对前面的现代、流行、时尚的做法是使用依赖注入（_Dependency Injection_）：这基本上意味着你要使用诸如 Boost.DI4之类的库自动满足特定组件的依赖关系的要求。
+针对前面的现代、流行、时尚的做法是使用依赖注入（_Dependency Injection_）：这基本上意味着你要使用诸如 Boost.DI\[^4\]之类的库自动满足特定组件的依赖关系的要求。
 
-注4：At the moment, Boost.DI is not yet part of Boost proper, it is part of the boost-experimental Github repository.
+\[^4\]：此时此刻，Boost.DI 还不是 Boost 库的一部分，它是 Github 上 Boost 实验库的一部分。
 
 让我们考虑一个具有引擎但还需要写入日志的汽车的例子。从目前的情况来看，我们可以说一辆车取决于这两件情况。首先，我们可以将引擎定义为：
 
@@ -711,7 +711,7 @@ auto injector = di::make_injector(
 auto car = injector.create<shared_ptr<Car>>();
 ```
 
-前面的内容创建了一个 shared\_ptr\，它指向了一个完全初始化的 Car 对象，这正是我们想要的。这种方法的伟大之处在于，如果需要更改正在使用的记录器的类型，我们可以在一个地方（绑定调用）更改它，而 ILogger 出现的每个地方现在都可以使用我们提供的其它日志记录组件。这种方法还可以帮助我们进行单元测试，并允许我们使用桩（或 Null 对象模式）代替模拟。
+前面的内容创建了一个 shared\_ptr&lt;Car&gt;，它指向了一个完全初始化的 Car 对象，这正是我们想要的。这种方法的伟大之处在于，如果需要更改正在使用的记录器的类型，我们可以在一个地方（绑定调用）更改它，而 ILogger 出现的每个地方现在都可以使用我们提供的其它日志记录组件。这种方法还可以帮助我们进行单元测试，并允许我们使用桩（或 Null 对象模式）代替模拟。
 
 ### 模式时间!
 
