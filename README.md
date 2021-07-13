@@ -2,7 +2,7 @@
 
 作者：Dmitri Nesteruk
 
-译者：和风
+译者：郑书原
 
 邮箱：soyoo@aliyun.com
 
