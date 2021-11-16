@@ -12,4 +12,4 @@
 
 GitHub: [https://github.com/soyoo/design\_patterns\_in\_modern\_cpp\_zh\_sample](https://github.com/soyoo/design\_patterns\_in\_modern\_cpp\_zh\_sample)
 
-Gitbook: [https://soyoo.gitbook.io/design\_patterns\_in\_modern\_cpp\_zh\_sample/](https://soyoo.gitbook.io/design-patterns-in-modern-cpp-zh-sample/)
+Gitbook: [https://soyoo.gitbook.io/design\_patterns\_in\_modern\_cpp\_zh\_sample/](https://soyoo.gitbook.io/design\_patterns\_in\_modern\_cpp\_zh\_sample/)
